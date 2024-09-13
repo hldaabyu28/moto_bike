@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "956916834979",
+    "project_id": "course-motobike-64406",
+    "storage_bucket": "course-motobike-64406.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:956916834979:android:c18010b9d6447f46e35516",
+        "android_client_info": {
+          "package_name": "com.example.rent_motor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO30vVLX-X-Odu9emG1eU5u_6kGMEQWig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
