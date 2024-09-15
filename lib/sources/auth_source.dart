@@ -5,9 +5,12 @@ import 'package:d_session/d_session.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:rent_motor/models/account.dart';
 
-class AuthResource {
+class AuthSource {
   static Future<String> signUp(
-      String name, String email, String password) async {
+    String name,
+    String email,
+    String password,
+  ) async {
     try {
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
@@ -26,15 +29,15 @@ class AuthResource {
       return 'success';
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        return ('The password provided is too weak.');
+        return 'The password provided is too weak.';
       } else if (e.code == 'email-already-in-use') {
-        return ('The account already exists for that email.');
+        return 'The account already exists for that email.';
       }
       log(e.toString());
-      return 'something wrong';
+      return "something wrong";
     } catch (e) {
       log(e.toString());
-      return 'something wrong';
+      return "something wrong";
     }
   }
 
@@ -47,15 +50,18 @@ class AuthResource {
           .doc(credential.user!.uid)
           .get();
       await DSession.setUser(Map.from(accountDoc.data()!));
-      return 'success';
+      return "success";
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        return 'No user found for that email.';
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+        return 'Wrong password provided for that user.';
       }
       log(e.toString());
-      return 'something wrong';
+      return "something wrong";
+    } catch (e) {
+      log(e.toString());
+      return "something wrong";
     }
   }
 }

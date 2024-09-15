@@ -20,7 +20,7 @@ class Bike {
     required this.release,
   });
 
-  factory Bike.toJson(Map<String, dynamic> json) {
+  factory Bike.fromJson(Map<String, dynamic> json) {
     return Bike(
       about: json['about'] as String,
       category: json['category'] as String,
@@ -45,4 +45,6 @@ class Bike {
       rating: 0,
       release: ''
   );
+
+
 }

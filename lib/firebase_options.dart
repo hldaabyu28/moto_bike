@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'course-motobike-64406.appspot.com',
     measurementId: 'G-NB8QD7VSD8',
   );
+
 }

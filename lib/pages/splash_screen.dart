@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:rent_motor/widgets/button_primary.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,6 +12,53 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const Gap(70),
+        Image.asset(
+          'assets/logo_text.png',
+          height: 38,
+          width: 171,
+        ),
+        Text(
+          'Drive & Be Happy',
+          style: TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.w700,
+            color: Color(0xff070623),
+          ),
+        ),
+        Expanded(
+          child: Transform.translate(
+            offset: Offset(-99, 50),
+            child: Image.asset(
+              'assets/splash_screen.png',
+            ),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24),
+          child: Text(
+            'We provide all beautiful motorbike for your road trip and great memories of life.',
+            style: TextStyle(
+              fontSize: 16,
+              height: 2,
+              fontWeight: FontWeight.w500,
+              color: Color(0xff070623),
+            ),
+          ),
+        ),
+        const Gap(30),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24),
+          child: ButtonPrimary(text: 'Explore Now', onTap: () {
+            Navigator.pushReplacementNamed(context, '/signup');
+          }),
+        ),
+        const Gap(50)
+      ], 
+    ));
   }
 }
