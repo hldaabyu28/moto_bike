@@ -21,30 +21,29 @@ class Bike {
   });
 
   factory Bike.fromJson(Map<String, dynamic> json) {
-    return Bike(
-      about: json['about'] as String,
-      category: json['category'] as String,
-      id: json['id'] as String,
-      image: json['image'] as String,
-      level: json['level'] as String,
-      name: json['name'] as String,
-      price: json['price'] as num,
-      rating: json['rating'] as num,
-      release: json['release'] as String,
-    );
-  }
+  return Bike(
+    about: json['about'] as String,
+    category: json['category'] as String,
+    id: json['id'] as String,
+    image: json['image'] as String,
+    level: json['level'] as String,
+    name: json['name'] as String,
+    price: json['price'] as num? ?? 0,  
+    rating: json['rating'] as num? ?? 0,  
+    release: json['release'] as String,
+  );
+}
+
 
   static Bike get empty => Bike(
-      about: '',
-      id: '',
-      category: '',
-      image: '',
-      level: '',
-      name: '',
-      price: 0,
-      rating: 0,
-      release: ''
-  );
-
-
+        about: '',
+        category: '',
+        id: '',
+        image: '',
+        level: '',
+        name: '',
+        price: 0,
+        rating: 0,
+        release: '',
+      );
 }

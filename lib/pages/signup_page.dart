@@ -31,13 +31,15 @@ class _SignupPageState extends State<SignupPage> {
       edtPassword.text,     
     ).then((message) {
       if(message != 'success') return Info.error(message);
+      
 
       Info.success('Success Sign Up');
       Future.delayed(const Duration(milliseconds: 1500), () {
         Navigator.pushReplacementNamed(context, '/signin');
       });
+      
     });
-  
+   
   }
 
 
@@ -50,7 +52,7 @@ class _SignupPageState extends State<SignupPage> {
         children: [
           const Gap(100),
           Image.asset(
-            'assets/logo_text.png',
+            'assets/logo1.png',
             height: 38,
             width: 171,
           ),

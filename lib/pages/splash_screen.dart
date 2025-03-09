@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       children: [
         const Gap(70),
         Image.asset(
-          'assets/logo_text.png',
+          'assets/logo1.png',
           height: 38,
           width: 171,
         ),
